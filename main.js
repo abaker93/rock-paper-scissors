@@ -3,6 +3,7 @@ const computerScoreContainer = document.getElementById('computer-score');
 const playerSelectContainer = document.getElementById('player-select');
 const computerSelectContainer = document.getElementById('computer-select');
 const results = document.getElementById('results');
+const modal = document.getElementById('modal');
 const winResults = document.getElementById('win-results');
 
 let playerScore = 0;
@@ -74,6 +75,7 @@ function playRound(playerSelect) {
 
 	// if player wins 5 games
 	if (playerScore === 5) {
+		modal.classList.remove('hide-modal');
 		winResults.innerHTML = `
 			<h2>Player Wins!</h2>
 			<h3>Final Score</h3>
@@ -85,6 +87,7 @@ function playRound(playerSelect) {
 
 	// if computer wins 5 games
 	if (computerScore === 5) {
+		modal.classList.remove('hide-modal');
 		winResults.innerHTML = `
 			<h2>Computer Wins!</h2>
 			<h3>Final Score</h3>
@@ -103,6 +106,7 @@ function reset() {
 	computerScoreContainer.innerHTML = computerScore;
 	playerSelectContainer.innerHTML = '';
 	computerSelectContainer.innerHTML = '';
-	results.innerHTML = '';
+	results.innerHTML = 'Choose a button to play a round';
 	winResults.innerHTML = '';
+	modal.classList.add('hide-modal');
 }

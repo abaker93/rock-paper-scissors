@@ -2,10 +2,16 @@
 <html>
 <head>
 	<title>Rock Paper Scissors Game</title>
+	<link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet"> 
+	<link href="reset.css" rel="stylesheet" />
 	<link href="styles.css" rel="stylesheet" />
 </head>
 <body>
-	<h1>Rock &bull; Paper &bull; Scissors</h1>
+	<h1>
+		<span class="pink">Rock</span> &bull; 
+		<span class="blue">Paper</span> &bull; 
+		<span class="orange">Scissors</span>
+	</h1>
 	<div id="score">
 		<div>
 			<h2>Player Score:</h2>
@@ -16,21 +22,25 @@
 			<p id="computer-score"></p>
 		</div>
 	</div>
-	<button onclick="playRound('rock')">Rock</button>
-	<button onclick="playRound('paper')">Paper</button>
-	<button onclick="playRound('scissors')">Scissors</button>
-	<div id="selections">
+	<div id="choice">
+		<button onclick="playRound('rock')" class="pink-btn">Rock</button>
+		<button onclick="playRound('paper')" class="blue-btn">Paper</button>
+		<button onclick="playRound('scissors')" class="orange-btn">Scissors</button>
+	</div>
+	<div id="selection">
 		<div>
 			<h2>Player Chooses:</h2>
-			<p id="player-select"></p>
+			<p id="player-select"> </p>
 		</div>
 		<div>
 			<h2>Computer Score:</h2>
-			<p id="computer-select"></p>
+			<p id="computer-select"> </p>
 		</div>
 	</div>
-	<div id="results"></div>
-	<div id="win-results"></div>
+	<div id="results">Choose a button to play a round</div>
+	<div id="modal" class="hide-modal">
+		<div id="win-results"></div>
+	</div>
 </body>
 <script src="main.js"></script>
 </html>
