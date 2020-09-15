@@ -2,55 +2,35 @@
 <html>
 <head>
 	<title>Rock Paper Scissors Game</title>
+	<link href="styles.css" rel="stylesheet" />
 </head>
 <body>
+	<h1>Rock &bull; Paper &bull; Scissors</h1>
+	<div id="score">
+		<div>
+			<h2>Player Score:</h2>
+			<p id="player-score"></p>
+		</div>
+		<div>
+			<h2>Computer Score:</h2>
+			<p id="computer-score"></p>
+		</div>
+	</div>
+	<button onclick="playRound('rock')">Rock</button>
+	<button onclick="playRound('paper')">Paper</button>
+	<button onclick="playRound('scissors')">Scissors</button>
+	<div id="selections">
+		<div>
+			<h2>Player Chooses:</h2>
+			<p id="player-select"></p>
+		</div>
+		<div>
+			<h2>Computer Score:</h2>
+			<p id="computer-select"></p>
+		</div>
+	</div>
+	<div id="results"></div>
+	<div id="win-results"></div>
 </body>
-<script>
-function computerPlay() {
-	const computerSelections = ['rock', 'paper', 'scissors']
-	const randomNum = Math.round(Math.random()*2);
-	
-	return computerSelections[randomNum];
-}
-
-function game() {
-	function playRound() {
-		let computerSelect = computerPlay();
-		let playerInput = prompt('Rock, Paper, or Scissors?');
-		const playerSelect = playerInput.toLowerCase();
-			
-		if (playerSelect === computerSelect) {
-			return 'It\'s a tie!';
-		} else if (playerSelect === 'rock') {
-			if (computerSelect === 'scissors') {
-				return 'You Win! Rock beats Scissors'
-			} else if (computerSelect === 'paper') {
-				return 'You Loose! Paper beats Rock'
-			}
-		} else if (playerSelect === 'scissors') {
-			if (computerSelect === 'paper') {
-				return 'You Win! Scissors beats Paper'
-			} else if (computerSelect === 'rock') {
-				return 'You Loose! Rock beats Scissors'
-			}
-		}  else if (playerSelect === 'paper') {
-			if (computerSelect === 'rock') {
-				return 'You Win! Paper beats Rock'
-			} else if (computerSelect === 'scissors') {
-				return 'You Loose! Scissors beats Paper'
-			}
-		} else {
-			return 'invalid response'
-		}
-	}
-		
-	console.log(playRound());
-	console.log(playRound());
-	console.log(playRound());
-	console.log(playRound());
-	console.log(playRound());
-}
-		
-game();
-</script>
+<script src="main.js"></script>
 </html>
