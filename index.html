@@ -4,54 +4,53 @@
 	<title>Rock Paper Scissors Game</title>
 </head>
 <body>
-	<p>testing something</p>
-	<script>
-		function computerPlay() {
-			const computerSelections = ['rock', 'paper', 'scissors']
-			const randomNum = Math.round(Math.random()*2);
-
-			return computerSelections[randomNum];
-		}
-
-		function game() {
-			function playRound() {
-				let computerSelect = computerPlay();
-				let playerInput = prompt('Rock, Paper, or Scissors?');
-				const playerSelect = playerInput.toLowerCase();
-
-				if (playerSelect === computerSelect) {
-					return 'It\'s a tie!';
-				} else if (playerSelect === 'rock') {
-					if (computerSelect === 'scissors') {
-						return 'You Win! Rock beats Scissors'
-					} else if (computerSelect === 'paper') {
-						return 'You Loose! Paper beats Rock'
-					}
-				} else if (playerSelect === 'scissors') {
-					if (computerSelect === 'paper') {
-						return 'You Win! Scissors beats Paper'
-					} else if (computerSelect === 'rock') {
-						return 'You Loose! Rock beats Scissors'
-					}
-				}  else if (playerSelect === 'paper') {
-					if (computerSelect === 'rock') {
-						return 'You Win! Paper beats Rock'
-					} else if (computerSelect === 'scissors') {
-						return 'You Loose! Scissors beats Paper'
-					}
-				} else {
-					return 'invalid response'
-				}
-			}
-
-			console.log(playRound());
-			console.log(playRound());
-			console.log(playRound());
-			console.log(playRound());
-			console.log(playRound());
-		}
-
-		game();
-	</script>
 </body>
+<script>
+function computerPlay() {
+	const computerSelections = ['rock', 'paper', 'scissors']
+	const randomNum = Math.round(Math.random()*2);
+	
+	return computerSelections[randomNum];
+}
+
+function game() {
+	function playRound() {
+		let computerSelect = computerPlay();
+		let playerInput = prompt('Rock, Paper, or Scissors?');
+		const playerSelect = playerInput.toLowerCase();
+			
+		if (playerSelect === computerSelect) {
+			return 'It\'s a tie!';
+		} else if (playerSelect === 'rock') {
+			if (computerSelect === 'scissors') {
+				return 'You Win! Rock beats Scissors'
+			} else if (computerSelect === 'paper') {
+				return 'You Loose! Paper beats Rock'
+			}
+		} else if (playerSelect === 'scissors') {
+			if (computerSelect === 'paper') {
+				return 'You Win! Scissors beats Paper'
+			} else if (computerSelect === 'rock') {
+				return 'You Loose! Rock beats Scissors'
+			}
+		}  else if (playerSelect === 'paper') {
+			if (computerSelect === 'rock') {
+				return 'You Win! Paper beats Rock'
+			} else if (computerSelect === 'scissors') {
+				return 'You Loose! Scissors beats Paper'
+			}
+		} else {
+			return 'invalid response'
+		}
+	}
+		
+	console.log(playRound());
+	console.log(playRound());
+	console.log(playRound());
+	console.log(playRound());
+	console.log(playRound());
+}
+		
+game();
+</script>
 </html>
